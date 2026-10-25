@@ -1,0 +1,19 @@
+# Configuration Netlify — Dar L'Walida (Next.js 16, App Router)
+#
+# Le site est un build Next.js « serveur » (pas de `output: "export"`) :
+# route dynamique /api/health + optimisation d'images via next/image.
+# Netlify détecte automatiquement Next.js et installe son adaptateur
+# OpenNext : ne PAS ajouter @netlify/plugin-nextjs dans package.json.
+#
+# Aucune redirection SPA n'est nécessaire : l'App Router gère les routes
+# côté serveur. Une règle /* -> /index.html casserait le site.
+# Docs : https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Node 20 est en fin de vie (avril 2026) ; Next.js 16 exige >= 20.9.
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"

@@ -1,0 +1,36 @@
+# Dependencies and framework output
+node_modules/
+.next/
+out/
+.vercel/
+.turbo/
+
+# Netlify local state
+.netlify/
+
+# Local environment files and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs, test output, and local caches
+*.log
+logs/
+coverage/
+playwright-report/
+test-results/
+/tmp/
+
+# TypeScript incremental build metadata & Next.js generated types
+*.tsbuildinfo
+next-env.d.ts
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
